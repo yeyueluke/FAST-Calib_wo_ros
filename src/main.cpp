@@ -95,9 +95,11 @@ int main(int argc, char** argv) {
         std::string edge_cloud_file = data_pair_dir + "/edge_cloud_" + std::to_string(data_idx) + ".pcd";
         std::string center_cloud_file = data_pair_dir + "/center_cloud_" + std::to_string(data_idx) + ".pcd";
         std::string plane_cloud_file = data_pair_dir + "/plane_cloud_" + std::to_string(data_idx) + ".pcd";
+        std::string center_z0_cloud_file = data_pair_dir + "/center_z0_cloud_" + std::to_string(data_idx) + ".pcd";
         pcl::io::savePCDFileASCII(edge_cloud_file, *lidarDetectPtr->getEdgeCloud());
         pcl::io::savePCDFileASCII(center_cloud_file, *lidar_center_cloud);
         pcl::io::savePCDFileASCII(plane_cloud_file, *lidarDetectPtr->getPlaneCloud());
+        pcl::io::savePCDFileASCII(center_z0_cloud_file, *lidarDetectPtr->getCenterZ0Cloud());
 
         std::vector<PointCloudPtr> cluster_clouds = lidarDetectPtr->getClusterClouds();
         for (size_t i = 0; i < cluster_clouds.size(); i++) {
