@@ -29,7 +29,11 @@ void sortPatternCenters(PointCloudPtr in_pc, PointCloudPtr out_v,
   // 1. Calculate the centroid of the points
   Eigen::Vector4f centroid;
   pcl::compute3DCentroid(*work_pc, centroid);
-  PointT ref_origin(centroid[0], centroid[1], centroid[2]);
+  // PointT ref_origin(centroid[0], centroid[1], centroid[2]);
+  PointT ref_origin;
+  ref_origin.x = centroid[0];
+  ref_origin.y = centroid[1];
+  ref_origin.z = centroid[2];
 
   // 2. Project points to the XY plane relative to the centroid and calculate
   // angles

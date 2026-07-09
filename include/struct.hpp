@@ -69,4 +69,4 @@ typedef pcl::PointCloud<pcl::PointXYZI> PointCloud;
 typedef pcl::PointCloud<pcl::PointXYZI>::Ptr PointCloudPtr;
 
 // define macro to new a PointCloudPtr
-#define MAKE_POINTCLOUD() std::make_shared<PointCloud>()
+#define MAKE_POINTCLOUD() boost::make_shared<PointCloud>()

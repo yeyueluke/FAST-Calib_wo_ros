@@ -4,9 +4,9 @@ set(CMAKE_CXX_FLAGS "-g3 -O -Wall")
 set(CMAKE_CXX_STANDARD 20)
 
 find_package(gflags REQUIRED)
-find_package(glog REQUIRED)
+#find_package(glog REQUIRED)
 find_package(yaml-cpp REQUIRED)
-find_package(PCL 1.8 REQUIRED)
+find_package(PCL  REQUIRED)
 find_package(OpenCV REQUIRED)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)

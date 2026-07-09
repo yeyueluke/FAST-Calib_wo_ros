@@ -140,7 +140,7 @@ int main(int argc, char** argv) {
 
 
         // 使用标定结果对点云进行染色
-        pcl::PointCloud<pcl::PointXYZRGB>::Ptr colored_cloud = std::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
+        pcl::PointCloud<pcl::PointXYZRGB>::Ptr colored_cloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
         PointCloudPtr cloud_input_downsample = MAKE_POINTCLOUD();
         cloud_input_downsample = dataPreprocessPtr->getPointCloud(data_idx, params.voxel_downsample_size);
         colorPointCloudWithImage(cloud_input_downsample, transformation, cam_params.getCameraMatrix(), cam_params.getDistCoeffs(), dataPreprocessPtr->img_inputs[data_idx], colored_cloud);

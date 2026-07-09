@@ -134,7 +134,13 @@ PointCloudPtr loadPointCloudFromTXT(const std::string& filepath) {
         if (!(iss >> x >> y >> z >> intensity)) {
             break;
         }
-        cloud->push_back(pcl::PointXYZI(x, y, z, intensity));
+        pcl::PointXYZI pt;
+        pt.x = x;
+        pt.y = y;
+        pt.z = z;
+        pt.intensity = intensity;
+        cloud->push_back(pt);
+        // cloud->push_back(pcl::PointXYZI(x, y, z, intensity));
     }
     file.close();
     return cloud;
